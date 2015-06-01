@@ -44,6 +44,7 @@ class Filesystem extends BaseFilesystem
      */
     public function write($filename, $content, $mode = 0644)
     {
-        $this->dumpFile($filename, $content, $mode);
+        $this->dumpFile($filename, $content);
+        $this->chmod($filename, $mode);
     }
 }
